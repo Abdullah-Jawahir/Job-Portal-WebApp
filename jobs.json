@@ -1,0 +1,240 @@
+[
+    {
+        "companyName": "Google",
+        "companyLogoSrc": "./Assets/google.png",
+        "jobPosition": {
+            "title": "Data Scientist",
+            "division": "Data Science",
+            "salary": "$135,000"
+        },
+        "aboutCompany": "Google is a multinational technology company known for its innovative products and services. With a mission to organize the world's information and make it universally accessible and useful, Google has been at the forefront of technology, shaping the way we interact with information and technology. Google is committed to using data and machine learning to improve various aspects of our lives, from search and advertising to cloud computing and artificial intelligence.",
+        "qualifications": [
+            "Bachelor's degree in Computer Science or related field",
+            "Experience with machine learning and data analysis",
+            "Strong programming skills in Python",
+            "Excellent problem-solving abilities",
+            "Proficiency in statistical analysis and data modeling",
+            "Experience with big data frameworks like Hadoop and Spark",
+            "Strong communication skills and the ability to explain complex findings to non-technical stakeholders",
+            "Familiarity with cloud computing platforms, such as Google Cloud"
+        ],
+        "address": "123 Google Way, Mountain View, CA",
+        "postedTime": "2 days ago",
+        "workingPlace": "Hybrid",
+        "applicants": 120
+    },
+    {
+        "companyName": "TikTok",
+        "companyLogoSrc": "./Assets/tiktok.webp",
+        "jobPosition": {
+            "title": "Data Analyst",
+            "division": "Data Analysis",
+            "salary": "$100,000"
+        },
+        "aboutCompany": "TikTok is a leading social media platform that has taken the world by storm. With a focus on short-form video content, TikTok has become a creative hub for people of all ages. The platform encourages self-expression, creativity, and connectivity, allowing users to showcase their talents, interests, and stories in unique and engaging ways. TikTok's data-driven approach has contributed to its rapid growth, making it a fascinating place for data analysts to explore user behavior and trends.",
+        "qualifications": [
+            "Bachelor's degree in Data Science, Statistics, or related field",
+            "Experience with data analysis and reporting",
+            "Proficiency in data visualization tools",
+            "Advanced skills in data mining and extracting insights from large datasets",
+            "Experience with A/B testing methodologies and experimental design",
+            "Knowledge of SQL and databases for efficient data retrieval",
+            "Familiarity with social media analytics and key performance indicators (KPIs)"
+        ],
+        "address": "456 TikTok Lane, Los Angeles, CA",
+        "postedTime": "3 days ago",
+        "workingPlace": "Remote",
+        "applicants": 85
+    },
+    {
+        "companyName": "YouTube",
+        "companyLogoSrc": "./Assets/youtube.png",
+        "jobPosition": {
+            "title": "Senior Software Engineer",
+            "division": "Software Engineering",
+            "salary": "$145,000"
+        },
+        "aboutCompany": "YouTube is the world's largest video-sharing platform, offering a vast array of content created by individuals and organizations. It has become an essential part of the online ecosystem, enabling creators to share their knowledge, art, and entertainment with a global audience. YouTube is driven by cutting-edge software engineering and data-driven decisions, making it a dynamic place for software engineers to work on innovative solutions that impact millions of users worldwide.",
+        "qualifications": [
+            "Bachelor's degree in Computer Science or related field",
+            "Proven experience in software development",
+            "Strong problem-solving and debugging skills",
+            "Familiarity with software design principles",
+            "Proficiency in multiple programming languages, including Java, C++, or JavaScript",
+            "Experience with video streaming technologies and codecs",
+            "Knowledge of DevOps practices and continuous integration/continuous deployment (CI/CD) pipelines",
+            "Strong understanding of video content management and distribution"
+        ],
+        "address": "789 YouTube Street, San Bruno, CA",
+        "postedTime": "1 week ago",
+        "workingPlace": "On-site",
+        "applicants": 50
+    },
+    {
+        "companyName": "Apple",
+        "companyLogoSrc": "./Assets/apple.png",
+        "jobPosition": {
+            "title": "UI/UX Designer",
+            "division": "Design",
+            "salary": "$110,000"
+        },
+        "aboutCompany": "Apple is a renowned multinational technology company celebrated for its iconic products and design excellence. It's a company that values creativity and user experience, consistently setting high standards in design and innovation. Apple's commitment to beautiful and user-friendly design has made it a leader in the technology industry. Joining Apple as a UI/UX designer means being part of a company dedicated to crafting user experiences that are both visually stunning and highly functional.",
+        "qualifications": [
+            "Bachelor's degree in Design, Graphic Design, or related field",
+            "Proven experience in UI/UX design projects",
+            "Proficiency with design software (e.g., Adobe Creative Suite)",
+            "Strong communication and collaboration skills",
+            "User research and usability testing skills to inform design decisions",
+            "Familiarity with interaction design principles and user-centered design methodologies",
+            "Experience in designing for both mobile and desktop platforms",
+            "Ability to create interactive prototypes for user testing"
+        ],
+        "address": "101 Apple Park, Cupertino, CA",
+        "postedTime": "4 days ago",
+        "workingPlace": "Hybrid",
+        "applicants": 70
+    },
+    {
+        "companyName": "X.com",
+        "companyLogoSrc": "./Assets/x.webp",
+        "jobPosition": {
+            "title": "Machine Learning Engineer",
+            "division": "Machine Learning",
+            "salary": "$140,000"
+        },
+        "aboutCompany": "X is a social media platform that connects people, ideas, and stories in real-time. It's a place where conversations happen, trends emerge, and information spreads quickly. As a Machine Learning Engineer at X, you'll work on cutting-edge projects that improve user experiences and contribute to the platform's growth and innovation.",
+        "qualifications": [
+            "Bachelor's or master's degree in Computer Science, Machine Learning, or related field",
+            "Proven experience in machine learning model development and deployment",
+            "Strong programming skills in Python and experience with machine learning libraries (e.g., TensorFlow, PyTorch)",
+            "Understanding of natural language processing and recommendation algorithms",
+            "Experience with big data technologies like Apache Spark",
+            "Ability to work collaboratively in cross-functional teams",
+            "Excellent problem-solving skills",
+            "Passion for staying updated on the latest developments in machine learning and AI"
+        ],
+        "address": "456 X Street, San Francisco, CA",
+        "postedTime": "6 days ago",
+        "workingPlace": "Hybrid",
+        "applicants": 75
+    },
+    {
+        "companyName": "Facebook",
+        "companyLogoSrc": "./Assets/facebook.png",
+        "jobPosition": {
+            "title": "Product Manager",
+            "division": "Product Management",
+            "salary": "$130,000"
+        },
+        "aboutCompany": "Facebook, now Meta Platforms, is a social media and technology company dedicated to connecting people and building communities. As a Product Manager at Facebook, you'll have the opportunity to shape products and features that impact billions of users worldwide. It's a place where innovation and collaboration are at the core of everything we do.",
+        "qualifications": [
+            "Bachelor's or master's degree in Business, Computer Science, or related field",
+            "Experience in product management, including product planning and execution",
+            "Strong analytical and problem-solving skills",
+            "Excellent communication and leadership abilities",
+            "Understanding of social media and online community dynamics",
+            "Ability to define and execute product roadmaps",
+            "Data-driven decision-making and familiarity with A/B testing"
+        ],
+        "address": "789 Facebook Avenue, Menlo Park, CA",
+        "postedTime": "1 week ago",
+        "workingPlace": "Hybrid",
+        "applicants": 65
+    },
+    {
+        "companyName": "Tesla",
+        "companyLogoSrc": "./Assets/tesla.png",
+        "jobPosition": {
+            "title": "Electrical Engineer",
+            "division": "Engineering",
+            "salary": "$120,000"
+        },
+        "aboutCompany": "Tesla is a leading electric vehicle and clean energy company. It's dedicated to accelerating the world's transition to sustainable energy. As an Electrical Engineer at Tesla, you'll work on cutting-edge technologies that are shaping the future of transportation and energy. You'll be part of a team that's driving innovation in electric vehicles, solar energy, and more.",
+        "qualifications": [
+            "Bachelor's or master's degree in Electrical Engineering or related field",
+            "Experience in electrical design, testing, and troubleshooting",
+            "Proficiency in CAD software for electrical design",
+            "Knowledge of electric vehicle systems and components",
+            "Strong problem-solving and analytical skills",
+            "Ability to work in a fast-paced and innovative environment",
+            "Passion for sustainable energy solutions"
+        ],
+        "address": "123 Tesla Drive, Palo Alto, CA",
+        "postedTime": "5 days ago",
+        "workingPlace": "On-site",
+        "applicants": 80
+    },
+    {
+        "companyName": "Microsoft",
+        "companyLogoSrc": "./Assets/microsoft.png",
+        "jobPosition": {
+            "title": "Cloud Solutions Architect",
+            "division": "Azure Cloud",
+            "salary": "$145,000"
+        },
+        "aboutCompany": "Microsoft is a global technology company that empowers people and organizations to achieve more. Azure is Microsoft's cloud computing platform, and as a Cloud Solutions Architect, you'll work on designing and implementing cloud solutions for customers across various industries. It's a dynamic role with opportunities for innovation and impact.",
+        "qualifications": [
+            "Bachelor's or master's degree in Computer Science or related field",
+            "Certifications such as Microsoft Certified: Azure Solutions Architect Expert",
+            "Extensive experience in cloud architecture and design",
+            "Strong knowledge of cloud security and compliance",
+            "Experience with DevOps practices and tools",
+            "Excellent communication and presentation skills",
+            "Ability to design and optimize applications for the Azure platform",
+            "Understanding of containerization and microservices architecture"
+        ],
+        "address": "456 Microsoft Way, Redmond, WA",
+        "postedTime": "6 days ago",
+        "workingPlace": "Hybrid",
+        "applicants": 95
+    },
+    {
+        "companyName": "IBM",
+        "companyLogoSrc": "./Assets/ibm.png",
+        "jobPosition": {
+            "title": "AI Research Scientist",
+            "division": "IBM Research",
+            "salary": "$155,000"
+        },
+        "aboutCompany": "IBM is a leading technology company with a rich history of innovation. IBM Research is dedicated to pushing the boundaries of technology, and as an AI Research Scientist, you'll be at the forefront of AI and machine learning advancements. You'll work on cutting-edge projects that have the potential to transform industries and solve complex challenges.",
+        "qualifications": [
+            "Ph.D. or master's degree in Computer Science, Artificial Intelligence, or related field",
+            "Strong research background in AI, machine learning, or deep learning",
+            "Publication record in top-tier AI conferences or journals",
+            "Proficiency in programming languages like Python, C++, or Java",
+            "Experience with AI frameworks and libraries (e.g., TensorFlow, PyTorch)",
+            "Strong problem-solving and analytical skills",
+            "Collaborative and innovative mindset",
+            "Ability to turn research into practical solutions"
+        ],
+        "address": "101 IBM Research Drive, Yorktown Heights, NY",
+        "postedTime": "1 week ago",
+        "workingPlace": "On-site",
+        "applicants": 60
+    },
+    {
+        "companyName": "Amazon",
+        "companyLogoSrc": "./Assets/amazon.webp",
+        "jobPosition": {
+            "title": "Cloud Solutions Architect",
+            "division": "Amazon Web Services (AWS)",
+            "salary": "$150,000"
+        },
+        "aboutCompany": "Amazon is a global e-commerce and cloud computing company that is known for its innovation and customer-centric approach. Amazon Web Services (AWS) is a subsidiary of Amazon providing on-demand cloud computing platforms and APIs to individuals, companies, and governments, on a metered pay-as-you-go basis. As a Cloud Solutions Architect at AWS, you'll play a crucial role in designing, developing, and implementing scalable and secure cloud solutions for customers worldwide.",
+        "qualifications": [
+            "Bachelor's or master's degree in Computer Science, Engineering, or related field",
+            "Extensive experience in cloud architecture and infrastructure design",
+            "Certifications such as AWS Certified Solutions Architect",
+            "Strong knowledge of cloud security and compliance best practices",
+            "Excellent communication and presentation skills",
+            "Experience with DevOps practices and tools",
+            "Ability to design and optimize applications for the AWS platform",
+            "Understanding of containerization and serverless technologies"
+        ],
+        "address": "123 Amazon Way, Seattle, WA",
+        "postedTime": "5 days ago",
+        "workingPlace": "Hybrid",
+        "applicants": 90
+    }
+    
+]

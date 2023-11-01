@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jobzz</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row flex-nowrap position-relative">
+
+      <div class="hamburger">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+
+      <div class=" col-auto col-md-4 d-flex flex-column text-bg-primary max-vh-100
+      first-column">
+
+        <div class="text-bg-primary p-2 mb-4 main-content">
+
+          <a href="./index.html" class="d-flex align-items-center text-white mx-4 justify-content-start logo">
+            <span class="d-none d-sm-inline">Jobzz</span>
+          </a>
+
+          <ul class="nav nav-pills flex-column mt-4">
+
+            <li class="nav-item my-2 bg-dark rounded-2 py-2 py-sm-0">
+              <a href="#" class="nav-link text-white">
+                <i class="fs-5 fa-solid fa-house"></i>
+                <small class="fs-5 d-none d-sm-inline ms-4">Home</small>
+              </a>
+            </li>
+            <li class="nav-item my-2 rounded-2 py-2 py-sm-0">
+              <a href="#" class="nav-link text-white">
+                <i class="fs-5 fa-solid fa-briefcase"></i>
+                <small class="fs-5 d-none d-sm-inline ms-4">Find Jobs</small>
+              </a>
+            </li>
+            <li class="nav-item my-2 rounded-2 py-2 py-sm-0">
+              <a href="#" class="nav-link text-white">
+                <i class="fs-5 fa-solid fa-chart-simple"></i>
+                <small class="fs-5 d-none d-sm-inline ms-4">Performance</small>
+              </a>
+            </li>
+            <li class="nav-item my-2 rounded-2 py-2 py-sm-0">
+              <a href="#" class="nav-link text-white">
+                <i class="fs-5 fa-solid fa-bookmark"></i>
+                <small class="fs-5 d-none d-sm-inline ms-4">Bookmarks</small>
+              </a>
+            </li>
+            <li class="nav-item my-2 rounded-2 py-2 py-sm-0">
+              <a href="#" class="nav-link text-white">
+                <i class="fs-5 fa-solid fa-envelope"></i>
+                <small class="fs-5 d-none d-sm-inline ms-4">Message</small>
+              </a>
+            </li>
+            <li class="nav-item my-2 rounded-2 py-2 py-sm-0">
+              <a href="#" class="nav-link text-white">
+                <i class="fs-5 fa-solid fa-gear"></i>
+                <small class="fs-5 d-none d-sm-inline ms-4">Setting</small>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="dropdown open user-profile">
+          <button class="btn btn-light border-none dropdown-toggle" type="button" id="triggerId"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user"></i>
+            <span class="ms-2 d-none d-sm-inline">Abdullah Jawahir</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="triggerId">
+            <button class="dropdown-item" href="#">Setting</button>
+            <button class="dropdown-item" href="#">Profile</button>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-6 d-flex flex-column justify-content-betweeen min-vh-100 position-relative mid-column">
+
+        <div class="container-fluid search-bar-form ">
+          <form class="d-flex" role="search">
+            <input class="rounded-start-pill" type="search" placeholder="Search your job here..." aria-label="Search">
+            <button class="btn rounded-end-pill" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <div class="container-fluid recommended-positions">
+          <h5>Recommendation</h5>
+          <div class="positions d-flex align-items-center justify-content-betweeen flex-wrap">
+            <button class="btn btn-light rounded-pill me-3 mb-2">Data Science</button>
+            <button class="btn btn-light rounded-pill me-3 mb-2">Data Engineer</button>
+            <button class="btn btn-light rounded-pill me-3 mb-2">Data Analyst</button>
+            <button class="btn btn-light rounded-pill me-3 mb-2">Software Architecture</button>
+            <button class="btn btn-light rounded-pill me-3 mb-2">CRM Analyst</button>
+            <button class="btn btn-light rounded-pill me-3 mb-2">Software Developer</button>
+            <button class="btn btn-light rounded-pill me-3 mb-2">Frontend Developer</button>
+          </div>
+        </div>
+
+        <div class="sort-area">
+          <span>Sort</span>
+          <select name="job-sortings" id="job-sortings">
+            <option>All</option>
+            <option>Newest Post</option>
+            <option>Oldest Post</option>
+            <option>Most Relevant</option>
+            <option>Highest Paid</option>
+          </select>
+        </div>
+
+        <div class="jobs">
+        </div>
+
+      </div>
+
+
+      <div class="col third-column">
+
+        <i class="fa-solid fa-xmark"></i>
+
+        <div class="company-name-lg">
+          <div class="company-logo">
+            <img src="./Assets/google.png" alt="company-logo">
+          </div>
+          <h3>Google</h3>
+          <p>Data Scientist</p>
+        </div>
+
+        <div class="about-company-lg">
+          <h4>About Company</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam hic excepturi sit!</p>
+          <span class="read-more-btn">Read more</span>
+        </div>
+
+        <div class="job-qualification-lg">
+          <h4>Qualification</h4>
+          <ul>
+            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Vero illum quaerat culpa nemo, quo perspiciatis corporis?</li>
+            <li>Asperiores illum esse est reprehenderit delectus accusantium quos nisi fuga!</li>
+            <li>Aliquam quam non consequuntur blanditiis ab tempore voluptate. Cum doloremque modi dolorum eaque.</li>
+            <li>Lorem ipsum dolor sit amet consectetur.</li>
+          </ul>
+          <span class="read-more-btn">Read more</span>
+        </div>
+
+        <div class="job-cta-btns">
+          <a href="#" class="btn btn-success" id="apply-job-btn">Apply Now</a>
+          <a href="#" class="btn btn-warning" id="save-job-btn">Save Job</a>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  </script>
+  <script src="./app.js" defer></script>
+</body>
+
+</html>
