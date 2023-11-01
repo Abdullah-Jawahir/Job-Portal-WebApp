@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a Job Portal Web Application designed and developed to provide an efficient and user-friendly platform for both job seekers and employers. It offers features such as job listings, applicant management, and seamless communication between candidates and recruiters.
+This project is a Job Portal Web Application designed and developed to provide an efficient and user-friendly platform for both job seekers and employers. It offers features such as job listings and applicant management.
 
 ## Technologies Used
 
