@@ -1,0 +1,141 @@
+.hamburger {
+
+    display: none;
+}
+
+.first-column {
+
+    z-index: 999;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: min-content;
+    max-width: 260px;
+    justify-content: space-between;
+    padding-bottom: 30px;
+}
+
+
+.logo span {
+
+    font-weight: bolder;
+    font-size: 4rem;
+}
+
+.nav .nav-item {
+
+    transition: .25s ease-in-out;
+}
+
+.nav .nav-item:hover,
+.nav .nav-item:focus {
+
+    background-color: #212529;
+}
+
+.first-column .user-profile {
+
+    z-index: 999;
+    
+}
+
+.user-profile button,
+.user-profile .dropdown-menu {
+
+    z-index: 999;
+}
+
+
+@include mQ(425px) {
+
+    .hamburger {
+
+        display: block;
+        width: 45px;
+        height: 45px;
+        position: absolute;
+        top: 25px;
+        left: 15px;
+        padding: 10px;
+        border-radius: 50%;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        cursor: pointer;
+        transform: scale(1);
+        transition: .2s;
+
+    }
+
+    .hamburger .fa-bars {
+
+        color: #333;
+        font-size: 1.5rem;
+    }
+
+    .hamburger:active {
+
+        transform: scale(.85);
+    }
+
+
+    .first-column {
+
+        /* display: none !important; */
+        width: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: .3s ease-in-out;
+    }
+
+    .user-profile .dropdown-menu {
+
+        width: fit-content;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .dropdown-menu.show {
+
+        transform: translate3d(-15px, -42px, 0) !important;
+        inset: 0 0 0px 0px;
+        border-radius: 5px !important;
+        width: fit-content !important;
+        min-width: 0;
+        margin-right: 0 !important;
+        margin-left: 6px !important;
+    }
+
+    .user-profile .dropdown-menu button {
+
+        width: fit-content;
+        padding: 5px;
+    }
+
+    .first-column.open-column {
+
+        width: min-content;
+        opacity: 1;
+        z-index: 999;
+    }
+}
+
+@include mQ(375px) {
+
+    .hamburger {
+
+        left: 10px;
+    }
+}
+
+@include mQ(325px) {
+
+    .hamburger {
+
+        left: 5px;
+    }
+}

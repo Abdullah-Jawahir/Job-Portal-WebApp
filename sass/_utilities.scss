@@ -1,0 +1,18 @@
+$primary-color: #0d6efd;
+$primary-dark-color: #0a5cd8;
+$text-gray: rgb(90, 90, 90);
+$light-black: #212529;
+$warning-color: #ffca2c;
+
+@mixin flexCenter($align) {
+    display: flex;
+    justify-content: $align;
+    align-items: center;
+}
+
+@mixin mQ($width) {
+    @media screen and (max-width: $width){
+        @content;
+    }
+}
+

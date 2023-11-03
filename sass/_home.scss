@@ -1,87 +1,3 @@
-* {
-
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
-
-:root {
-
-    --primary-color: #0d6efd;
-    --primary-dark-color: #0a5cd8;
-    --text-gray: rgb(90, 90, 90);
-    --light-black: #212529;
-    --warning-color: #ffca2c;
-}
-
-
-a {
-
-    text-decoration: none;
-}
-
-li {
-
-    list-style: none;
-}
-
-::-webkit-scrollbar {
-
-    width: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-
-    background-color: var(--light-black);
-}
-
-.hamburger {
-
-    display: none;
-}
-
-.first-column {
-
-    z-index: 999;
-    max-height: 100vh;
-    overflow-y: auto;
-    overflow-x: auto;
-    width: min-content;
-    max-width: 260px;
-    justify-content: space-between;
-    padding-bottom: 30px;
-}
-
-
-.logo span {
-
-    font-weight: bolder;
-    font-size: 4rem;
-}
-
-.nav .nav-item {
-
-    transition: .25s ease-in-out;
-}
-
-.nav .nav-item:hover,
-.nav .nav-item:focus {
-
-    background-color: #212529;
-}
-
-.first-column .user-profile {
-
-    z-index: 999;
-    
-}
-
-.user-profile button,
-.user-profile .dropdown-menu {
-
-    z-index: 999;
-}
-
 .mid-column {
 
     background-color: #e7e9fe;
@@ -115,14 +31,14 @@ li {
 
 .search-bar-form button {
 
-    background-color: var(--primary-color);
+    background-color: $primary-color;
     color: #fff;
     width: 80px;
 }
 
 .search-bar-form button:hover {
 
-    background-color: var(--primary-dark-color);
+    background-color: $primary-dark-color;
     color: #fff;
 }
 
@@ -146,7 +62,7 @@ li {
 .positions button:hover,
 .positions button.active {
 
-    background-color: var(--primary-color);
+    background-color: $primary-color;
     color: #fff;
 }
 
@@ -182,7 +98,7 @@ li {
 
 .jobs::-webkit-scrollbar-thumb {
 
-    background-color: var(--light-black);
+    background-color: $light-black;
 }
 
 .jobs .job-card {
@@ -241,7 +157,7 @@ li {
     justify-content: center;
     height: fit-content;
     width: fit-content;
-    color: var(--text-gray);
+    color: $text-gray;
     margin-bottom: 5px;
 
 }
@@ -260,7 +176,7 @@ li {
 .job-address i {
 
     margin-right: 10px;
-    color: var(--primary-dark-color);
+    color: $primary-dark-color;
     margin-bottom: 2px;
 }
 
@@ -276,10 +192,10 @@ li {
 .job-timings .job-applicants {
 
     margin-right: 10px;
-    color: var(--text-gray);
+    color: $text-gray;
     font-size: .9rem;
     margin-bottom: 0;
-    border-left: 3px solid var(--primary-dark-color);
+    border-left: 3px solid $primary-dark-color;
     padding-left: 5px;
 }
 
@@ -306,14 +222,14 @@ li {
 
 .other-job-info .job-salary .salary-amnt {
 
-    color: var(--primary-dark-color);
+    color: $primary-dark-color;
     font-weight: bold;
 }
 
 
 .job-card .advance-job-info {
 
-    color: var(--text-gray);
+    color: $text-gray;
     font-size: .9rem;
     height: 0;
     overflow-y: hidden;
@@ -337,7 +253,7 @@ li {
 
 /* Add hover effects to job cards */
 .jobs .job-card:hover {
-    background-color: var(--primary-color);
+    background-color: $primary-color;
     color: #fff;
     transform: scale(1.03);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -354,12 +270,12 @@ li {
 
 .job-card:hover .basic-job-info .job-address i, .job-card:hover .other-job-info p .salary-amnt {
 
-    color: var(--warning-color);
+    color: $warning-color;
 }
 
 .job-card:hover .basic-job-info .job-timings p {
 
-    border-color: var(--warning-color);
+    border-color: $warning-color;
 }
 
 
@@ -383,7 +299,7 @@ li {
     top: 20px;
     left: 30px;
     font-size: 2.5rem;
-    color: var(--text-gray);
+    color: $text-gray;
     cursor: pointer;
     z-index: 9999;
     display: none;
@@ -405,7 +321,7 @@ li {
 .job-qualification-lg ul li {
 
     font-size: .9rem;
-    color: var(--text-gray);
+    color: $text-gray;
 }
 
 .third-column .company-name-lg {
@@ -446,7 +362,7 @@ li {
 .company-name-lg p {
 
 
-    color: var(--text-gray);
+    color: $text-gray;
 }
 
 .third-column .about-company-lg {
@@ -486,7 +402,7 @@ li {
 .third-column > div .read-more-btn {
 
     margin-top: 1px;
-    color: var(--primary-dark-color);
+    color: $primary-dark-color;
     font-size: .9rem;
     cursor: pointer;
 }
@@ -552,7 +468,7 @@ li {
 
 
 
-@media screen and (max-width: 768px) {
+@include mQ(768px) {
 
     .mid-column {
 
@@ -659,82 +575,7 @@ li {
 }
 
 
-@media screen and (max-width: 425px) {
-
-    .hamburger {
-
-        display: block;
-        width: 45px;
-        height: 45px;
-        position: absolute;
-        top: 25px;
-        left: 15px;
-        padding: 10px;
-        border-radius: 50%;
-        background-color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 1;
-        cursor: pointer;
-        transform: scale(1);
-        transition: .2s;
-
-    }
-
-    .hamburger .fa-bars {
-
-        color: #333;
-        font-size: 1.5rem;
-    }
-
-    .hamburger:active {
-
-        transform: scale(.85);
-    }
-
-
-    .first-column {
-
-        /* display: none !important; */
-        width: 0;
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: .3s ease-in-out;
-    }
-
-    .user-profile .dropdown-menu {
-
-        width: fit-content;
-        margin-right: 0;
-        padding: 10px;
-    }
-
-    .dropdown-menu.show {
-
-        transform: translate3d(-15px, -42px, 0) !important;
-        inset: 0 0 0px 0px;
-        border-radius: 5px !important;
-        width: fit-content !important;
-        min-width: 0;
-        margin-right: 0 !important;
-        margin-left: 6px !important;
-    }
-
-    .user-profile .dropdown-menu button {
-
-        width: fit-content;
-        padding: 5px;
-    }
-
-    .first-column.open-column {
-
-        width: min-content;
-        opacity: 1;
-        z-index: 999;
-    }
+@include mQ(425px) {
 
     .search-bar-form {
 
@@ -789,12 +630,7 @@ li {
 
 }
 
-@media screen and (max-width: 375px) {
-
-    .hamburger {
-
-        left: 10px;
-    }
+@include mQ(375px) {
 
     .jobs .job-card {
 
@@ -821,12 +657,7 @@ li {
 }
 
 
-@media screen and (max-width:325px) {
-
-    .hamburger {
-
-        left: 5px;
-    }
+@include mQ(325px) {
 
     .jobs .job-card {
 
