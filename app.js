@@ -81,14 +81,13 @@ const handleJobCards = (data) => {
 
     jobsWrapper.innerHTML = ``;
 
-    sortDataAccendingOrder(data);
-
     data.forEach((job) => {
         const jobSalary = job.jobPosition.salary.slice(1, -1).split(',')[0];
         const jobQualificationsData = job.qualifications;
 
         const jobCard = document.createElement('div');
         jobCard.classList.add('card', 'job-card');
+
         jobCard.innerHTML = `
         <div class="company-icon">
             <img src="${job.companyLogoSrc}" alt="${job.companyName}-icon">
@@ -176,46 +175,55 @@ let selectedOption = 'All';
 let sortedData = [];
 
 const sortData = (data) => {
+    
+    sortSelect.addEventListener('change', () => {
+        selectedOption = sortSelect.value; // Use sortSelect.value to get the selected option
+    
+        if (selectedOption == 'All') {
+            sortedData = [...data] // Reset to default order
 
-    sortSelect.addEventListener('change', (option) => {
-        selectedOption = option.target.value;
-        sortedData = [];
+        } else if (selectedOption == 'Newest Post' || selectedOption == 'Most Relevant') {
+            
+            // First, sort in ascending order based on postedTimeInt
+            const sortedDataAscending = [...data];
+            sortDataAccendingOrder(sortedDataAscending);
 
-        data.forEach((job) => {
+            // Now, create separate arrays for "hour," "day," and "week"
+            const hourData = sortedDataAscending.filter(job => job.postedTime.includes('hour'));
+            const dayData = sortedDataAscending.filter(job => job.postedTime.includes('day'));
+            const weekData = sortedDataAscending.filter(job => job.postedTime.includes('week'));
 
-            const jobPostedTime = job.postedTime;
-            const jobPostedTimeInt = parseInt(jobPostedTime[0]);
+            // Concatenate these arrays to get the final sorted data
+            sortedData = [...hourData, ...dayData, ...weekData];
 
-            if (selectedOption == 'All') {
-                console.log('All');
-                sortedData.push(job);
+        } else if (selectedOption == 'Oldest Post') {
+            
+            // First, sort in desending order based on postedTimeInt
+            const sortedDataDeccending = [...data];
+            sortDataDeccendingOrder(sortedDataDeccending);
 
-            } else if (selectedOption == 'Newest Post' || selectedOption == 'Most Relevant') {
-                console.log('Newest Post');
-                if ((jobPostedTimeInt >= 1 && jobPostedTimeInt <= 12) && jobPostedTime.includes('hour')) {
-                    sortedData.push(job);
-                }
+            // Now, create separate arrays for "hour," "day," and "week"
+            const hourData = sortedDataDeccending.filter(job => job.postedTime.includes('hour'));
+            const dayData = sortedDataDeccending.filter(job => job.postedTime.includes('day'));
+            const weekData = sortedDataDeccending.filter(job => job.postedTime.includes('week'));
 
-            } else if (selectedOption == 'Oldest Post') {
-                console.log('Oldest Post');
-                if ((jobPostedTimeInt >= 1 && jobPostedTimeInt <= 12) && (jobPostedTime.includes('day') || jobPostedTime.includes('week'))) {
-                    sortedData.push(job);
-                }
+            // Concatenate these arrays in reverse order to get the final sorted data for "Oldest Post"
+            sortedData = [...weekData, ...dayData, ...hourData];
 
-            } else if (selectedOption == 'Highest Paid') {
-                console.log('Highest Paid');
-                const jobSalary = job.jobPosition.salary.slice(1, -1);
-                console.log(jobSalary);
-            }
-
-            handleJobCards(sortedData);
-        });
+        } else if (selectedOption == 'Highest Paid') {
+            sortedData = data.slice(); // Copy the original data array
+            sortedData.sort((job1, job2) => {
+                const job1Salary = parseInt(job1.jobPosition.salary.slice(1).replace(/,/g, ''), 10);
+                const job2Salary = parseInt(job2.jobPosition.salary.slice(1).replace(/,/g, ''), 10);
+                return job2Salary - job1Salary;
+            });
+        }
+        
+        handleJobCards(sortedData);
     });
+    
+
 }
-
-
-
-
 
 
 
@@ -230,8 +238,6 @@ fetch('./jobs.json')
     })
     .then((data) => {
         handleJobCards(data);
-        // const sortedData = data.map(sortData);
-        // handleJobCards(sortedData);
         sortData(data);
     })
     .catch((error) => {
