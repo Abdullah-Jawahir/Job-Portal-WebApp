@@ -41,9 +41,47 @@ const openThirdColumn = () => {
 }
 
 
+const sortDataAccendingOrder = (anyArray) => {
+
+    anyArray.sort((job1, job2) => {
+        // Extract the numbers from the postedTime property
+        const getNumber = (postedTime) => {
+            const number = parseInt(postedTime.match(/\d+/)[0], 10);
+            return isNaN(number) ? 0 : number;
+        };
+
+        // Extract numbers from the postedTime strings
+        const number1 = getNumber(job1.postedTime);
+        const number2 = getNumber(job2.postedTime);
+
+        // Compare the extracted numbers to sort in ascending order
+        return number1 - number2;
+    });
+}
+
+const sortDataDeccendingOrder = (anyArray) => {
+
+    anyArray.sort((job1, job2) => {
+        // Extract the numbers from the postedTime property
+        const getNumber = (postedTime) => {
+            const number = parseInt(postedTime.match(/\d+/)[0], 10);
+            return isNaN(number) ? 0 : number;
+        };
+
+        // Extract numbers from the postedTime strings
+        const number1 = getNumber(job1.postedTime);
+        const number2 = getNumber(job2.postedTime);
+
+        // Compare the extracted numbers to sort in ascending order
+        return number2 - number1;
+    });
+}
+
 const handleJobCards = (data) => {
 
-    // jobsWrapper.innerHTML = ``;
+    jobsWrapper.innerHTML = ``;
+
+    sortDataAccendingOrder(data);
 
     data.forEach((job) => {
         const jobSalary = job.jobPosition.salary.slice(1, -1).split(',')[0];
@@ -89,7 +127,7 @@ const handleJobCards = (data) => {
         jobsWrapper.appendChild(jobCard);
 
         const jobQualificationsWrapperMain = jobCard.querySelector('.job-qualifications');
-        
+
 
         jobQualificationsData.forEach((qualification) => {
 
@@ -119,9 +157,8 @@ const handleJobCards = (data) => {
 
             thirdColumn.classList.add('open-third-column-md');
         });
+
     });
-
-
 
 };
 
@@ -132,6 +169,53 @@ thirdColCloseIcon.addEventListener('click', () => {
 });
 
 openThirdColumn();
+
+
+const sortSelect = document.querySelector(".mid-column .sort-area #job-sortings");
+let selectedOption = 'All';
+let sortedData = [];
+
+const sortData = (data) => {
+
+    sortSelect.addEventListener('change', (option) => {
+        selectedOption = option.target.value;
+        sortedData = [];
+
+        data.forEach((job) => {
+
+            const jobPostedTime = job.postedTime;
+            const jobPostedTimeInt = parseInt(jobPostedTime[0]);
+
+            if (selectedOption == 'All') {
+                console.log('All');
+                sortedData.push(job);
+
+            } else if (selectedOption == 'Newest Post' || selectedOption == 'Most Relevant') {
+                console.log('Newest Post');
+                if ((jobPostedTimeInt >= 1 && jobPostedTimeInt <= 12) && jobPostedTime.includes('hour')) {
+                    sortedData.push(job);
+                }
+
+            } else if (selectedOption == 'Oldest Post') {
+                console.log('Oldest Post');
+                if ((jobPostedTimeInt >= 1 && jobPostedTimeInt <= 12) && (jobPostedTime.includes('day') || jobPostedTime.includes('week'))) {
+                    sortedData.push(job);
+                }
+
+            } else if (selectedOption == 'Highest Paid') {
+                console.log('Highest Paid');
+                const jobSalary = job.jobPosition.salary.slice(1, -1);
+                console.log(jobSalary);
+            }
+
+            handleJobCards(sortedData);
+        });
+    });
+}
+
+
+
+
 
 
 
@@ -146,6 +230,9 @@ fetch('./jobs.json')
     })
     .then((data) => {
         handleJobCards(data);
+        // const sortedData = data.map(sortData);
+        // handleJobCards(sortedData);
+        sortData(data);
     })
     .catch((error) => {
         console.error('Error loading JSON data:', error);
