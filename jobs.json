@@ -75,7 +75,7 @@
         "companyLogoSrc": "./Assets/apple.png",
         "jobPosition": {
             "title": "UI/UX Designer",
-            "division": "Design",
+            "division": "UI Design",
             "salary": "$110,000"
         },
         "aboutCompany": "Apple is a renowned multinational technology company celebrated for its iconic products and design excellence. It's a company that values creativity and user experience, consistently setting high standards in design and innovation. Apple's commitment to beautiful and user-friendly design has made it a leader in the technology industry. Joining Apple as a UI/UX designer means being part of a company dedicated to crafting user experiences that are both visually stunning and highly functional.",
@@ -193,7 +193,7 @@
         "companyLogoSrc": "./Assets/ibm.png",
         "jobPosition": {
             "title": "AI Research Scientist",
-            "division": "IBM Research",
+            "division": "Data Science",
             "salary": "$155,000"
         },
         "aboutCompany": "IBM is a leading technology company with a rich history of innovation. IBM Research is dedicated to pushing the boundaries of technology, and as an AI Research Scientist, you'll be at the forefront of AI and machine learning advancements. You'll work on cutting-edge projects that have the potential to transform industries and solve complex challenges.",

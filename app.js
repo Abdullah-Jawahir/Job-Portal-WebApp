@@ -77,87 +77,98 @@ const sortDataDeccendingOrder = (anyArray) => {
     });
 }
 
+const displayJobCard = (job) => {
+
+    const jobSalary = job.jobPosition.salary.slice(1, -1).split(',')[0];
+    const jobQualificationsData = job.qualifications;
+
+    const jobCard = document.createElement('div');
+    jobCard.classList.add('card', 'job-card');
+
+    jobCard.innerHTML = `
+    <div class="company-icon">
+        <img src="${job.companyLogoSrc}" alt="${job.companyName}-icon">
+    </div>
+    <div class="basic-job-info">
+        <h3 class="company-name">${job.companyName}</h3>
+        <p class="job-catergory">${job.jobPosition.title}</p>
+        <div class="job-address">
+        <i class="fa-solid fa-location-dot"></i>
+        <address>${job.address}</address>
+    </div>
+    <div class="job-timings">
+        <p class="posted-time">${job.postedTime}</p>
+        <p class="job-time">${job.workingPlace}</p>
+        <p class="job-applicants">${job.applicants} Applicants</p>
+    </div>
+    </div>
+    <div class="other-job-info">
+        <h5>Division</h5>
+        <p class="job-position">${job.jobPosition.division}</p>
+        <p class="job-salary"><span class="salary-amnt">$${jobSalary}k</span>/year</p>
+    </div>
+
+    <div class="advance-job-info about-company">
+        <p>
+            ${job.aboutCompany}
+        </p>
+    </div>
+
+    <ul class="advance-job-info job-qualifications">
+
+    </ul>
+
+    `;
+
+    jobsWrapper.appendChild(jobCard);
+
+    const jobQualificationsWrapperMain = jobCard.querySelector('.job-qualifications');
+
+
+    jobQualificationsData.forEach((qualification) => {
+
+        const jobQualification = document.createElement('li');
+        jobQualification.innerText = qualification;
+        jobQualificationsWrapperMain.appendChild(jobQualification);
+    });
+
+
+    jobCard.addEventListener('click', () => {
+
+        const companyLogoSrc = jobCard.querySelector('.company-icon img').src;
+        const companyName = jobCard.querySelector('.basic-job-info .company-name').innerText;
+        const jobPositions = jobCard.querySelector('.basic-job-info .job-catergory').innerText;
+        const relevantJobPosition = jobPositions.split(",")[0];
+        const aboutCompany = jobCard.querySelector('.about-company p').innerText;
+        const jobQualificationsWrapper = jobCard.querySelector('.job-qualifications');
+
+        thirdColcompanyLogo.src = companyLogoSrc;
+        thirdColcompanyName.innerText = companyName;
+        thirdColjobPosition.innerText = relevantJobPosition;
+        thirdColAboutCompany.innerText = aboutCompany;
+        thirdColJobQualificationWrapper.innerHTML = jobQualificationsWrapper.innerHTML;
+
+        thirdColumn.classList.remove('open-third-column');
+        openThirdColumn();
+
+        thirdColumn.classList.add('open-third-column-md');
+    });
+
+    
+}
+
+let displayedJobCards = null;
+
 const handleJobCards = (data) => {
 
     jobsWrapper.innerHTML = ``;
 
     data.forEach((job) => {
-        const jobSalary = job.jobPosition.salary.slice(1, -1).split(',')[0];
-        const jobQualificationsData = job.qualifications;
 
-        const jobCard = document.createElement('div');
-        jobCard.classList.add('card', 'job-card');
-
-        jobCard.innerHTML = `
-        <div class="company-icon">
-            <img src="${job.companyLogoSrc}" alt="${job.companyName}-icon">
-        </div>
-        <div class="basic-job-info">
-            <h3 class="company-name">${job.companyName}</h3>
-            <p class="job-catergory">${job.jobPosition.title}</p>
-            <div class="job-address">
-            <i class="fa-solid fa-location-dot"></i>
-            <address>${job.address}</address>
-        </div>
-        <div class="job-timings">
-            <p class="posted-time">${job.postedTime}</p>
-            <p class="job-time">${job.workingPlace}</p>
-            <p class="job-applicants">${job.applicants} Applicants</p>
-        </div>
-        </div>
-        <div class="other-job-info">
-            <h5>Division</h5>
-            <p class="job-position">${job.jobPosition.division}</p>
-            <p class="job-salary"><span class="salary-amnt">$${jobSalary}k</span>/year</p>
-        </div>
-
-        <div class="advance-job-info about-company">
-            <p>
-                ${job.aboutCompany}
-            </p>
-        </div>
-
-        <ul class="advance-job-info job-qualifications">
-
-        </ul>
-        
-        `;
-
-        jobsWrapper.appendChild(jobCard);
-
-        const jobQualificationsWrapperMain = jobCard.querySelector('.job-qualifications');
-
-
-        jobQualificationsData.forEach((qualification) => {
-
-            const jobQualification = document.createElement('li');
-            jobQualification.innerText = qualification;
-            jobQualificationsWrapperMain.appendChild(jobQualification);
-        });
-
-
-        jobCard.addEventListener('click', () => {
-
-            const companyLogoSrc = jobCard.querySelector('.company-icon img').src;
-            const companyName = jobCard.querySelector('.basic-job-info .company-name').innerText;
-            const jobPositions = jobCard.querySelector('.basic-job-info .job-catergory').innerText;
-            const relevantJobPosition = jobPositions.split(",")[0];
-            const aboutCompany = jobCard.querySelector('.about-company p').innerText;
-            const jobQualificationsWrapper = jobCard.querySelector('.job-qualifications');
-
-            thirdColcompanyLogo.src = companyLogoSrc;
-            thirdColcompanyName.innerText = companyName;
-            thirdColjobPosition.innerText = relevantJobPosition;
-            thirdColAboutCompany.innerText = aboutCompany;
-            thirdColJobQualificationWrapper.innerHTML = jobQualificationsWrapper.innerHTML;
-
-            thirdColumn.classList.remove('open-third-column');
-            openThirdColumn();
-
-            thirdColumn.classList.add('open-third-column-md');
-        });
+        displayJobCard(job);
 
     });
+
 
 };
 
@@ -170,20 +181,68 @@ thirdColCloseIcon.addEventListener('click', () => {
 openThirdColumn();
 
 
+const categoriesArray = [
+    "Data Science",
+    "Engineering",
+    "Data Analysis",
+    "Management",
+    "UI Design",
+    "Amazon Web Services",
+    "Web Development",
+    "Cloud"
+    // Add new categories here if needed
+];
+
+const categoriesDiv = document.querySelector(".categories-wrapper .categories");
+const categories = categoriesDiv.querySelectorAll("button");
+let categorizedData = [];
+
+// Function to update category buttons
+const handleCategoryButtons = (data) => {
+    categoriesArray.forEach((item) => {
+        let existingCategory = false;
+
+        categories.forEach((category) => {
+            // Check if the division button already exists
+            if (category.textContent.toLocaleLowerCase() === item.toLowerCase()) {
+                existingCategory = true;
+            }
+        });
+
+        if (!existingCategory) {
+            const newButton = document.createElement("button");
+            newButton.className = "btn btn-light rounded-pill me-3 mb-2";
+            newButton.textContent = item;
+            categoriesDiv.appendChild(newButton);
+
+            newButton.addEventListener('click', () => {
+
+                const selectedCategory = newButton.textContent;
+                categorizedData = data.filter(job => job.jobPosition.division.includes(`${selectedCategory}`));
+                jobsWrapper.innerHTML = ``;
+                categorizedData.forEach((job) => {
+                    displayJobCard(job);
+                });
+            });
+
+        }
+    });
+}
+
 const sortSelect = document.querySelector(".mid-column .sort-area #job-sortings");
-let selectedOption = 'All';
+let selectedOption = '';
 let sortedData = [];
 
 const sortData = (data) => {
-    
+
     sortSelect.addEventListener('change', () => {
         selectedOption = sortSelect.value; // Use sortSelect.value to get the selected option
-    
+
         if (selectedOption == 'All') {
             sortedData = [...data] // Reset to default order
 
         } else if (selectedOption == 'Newest Post' || selectedOption == 'Most Relevant') {
-            
+
             // First, sort in ascending order based on postedTimeInt
             const sortedDataAscending = [...data];
             sortDataAccendingOrder(sortedDataAscending);
@@ -197,7 +256,7 @@ const sortData = (data) => {
             sortedData = [...hourData, ...dayData, ...weekData];
 
         } else if (selectedOption == 'Oldest Post') {
-            
+
             // First, sort in desending order based on postedTimeInt
             const sortedDataDeccending = [...data];
             sortDataDeccendingOrder(sortedDataDeccending);
@@ -218,13 +277,14 @@ const sortData = (data) => {
                 return job2Salary - job1Salary;
             });
         }
-        
-        handleJobCards(sortedData);
+
+        jobsWrapper.innerHTML = ``;
+        sortedData.forEach((job) => {
+            displayJobCard(job);
+        });
     });
-    
 
 }
-
 
 
 // Fetch data from the JSON file
@@ -239,6 +299,7 @@ fetch('./jobs.json')
     .then((data) => {
         handleJobCards(data);
         sortData(data);
+        handleCategoryButtons(data);
     })
     .catch((error) => {
         console.error('Error loading JSON data:', error);

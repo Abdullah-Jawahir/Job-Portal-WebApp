@@ -42,25 +42,28 @@
     color: #fff;
 }
 
-.recommended-positions {
+.categories-wrapper {
 
     margin-bottom: 20px;
 }
 
-.positions button {
+.categories-wrapper h5 {
 
-    font-size: .8rem;
-    font-weight: 500;
-    background-color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
 }
 
-.recommended-positions h5 {
+.categories button {
 
     font-size: .9rem;
+    // font-weight: 500;
+    background-color: #fff;
+    // border: 0;
+    outline: 0;
 }
 
-.positions button:hover,
-.positions button.active {
+.categories button:hover,
+.categories button.active {
 
     background-color: $primary-color;
     color: #fff;
@@ -498,7 +501,7 @@
         width: fit-content;
     }
 
-    .mid-column .recommended-positions {
+    .mid-column .categories-wrapper {
 
         width: 100%;
         padding-left: 0;
