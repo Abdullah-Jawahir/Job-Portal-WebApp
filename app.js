@@ -180,55 +180,6 @@ thirdColCloseIcon.addEventListener('click', () => {
 
 openThirdColumn();
 
-
-const categoriesArray = [
-    "Data Science",
-    "Engineering",
-    "Data Analysis",
-    "Management",
-    "UI Design",
-    "Amazon Web Services",
-    "Web Development",
-    "Cloud"
-    // Add new categories here if needed
-];
-
-const categoriesDiv = document.querySelector(".categories-wrapper .categories");
-const categories = categoriesDiv.querySelectorAll("button");
-let categorizedData = [];
-
-// Function to update category buttons
-const handleCategoryButtons = (data) => {
-    categoriesArray.forEach((item) => {
-        let existingCategory = false;
-
-        categories.forEach((category) => {
-            // Check if the division button already exists
-            if (category.textContent.toLocaleLowerCase() === item.toLowerCase()) {
-                existingCategory = true;
-            }
-        });
-
-        if (!existingCategory) {
-            const newButton = document.createElement("button");
-            newButton.className = "btn btn-light rounded-pill me-3 mb-2";
-            newButton.textContent = item;
-            categoriesDiv.appendChild(newButton);
-
-            newButton.addEventListener('click', () => {
-
-                const selectedCategory = newButton.textContent;
-                categorizedData = data.filter(job => job.jobPosition.division.includes(`${selectedCategory}`));
-                jobsWrapper.innerHTML = ``;
-                categorizedData.forEach((job) => {
-                    displayJobCard(job);
-                });
-            });
-
-        }
-    });
-}
-
 const sortSelect = document.querySelector(".mid-column .sort-area #job-sortings");
 let selectedOption = '';
 let sortedData = [];
@@ -282,8 +233,67 @@ const sortData = (data) => {
         sortedData.forEach((job) => {
             displayJobCard(job);
         });
+
     });
 
+}
+
+const categoriesArray = [
+    "All",
+    "Data Science",
+    "Engineering",
+    "Data Analysis",
+    "Management",
+    "UI Design",
+    "Amazon Web Services",
+    "Web Development",
+    "Cloud"
+    // Add new categories here if needed
+];
+
+const categoriesDiv = document.querySelector(".categories-wrapper .categories");
+const categories = categoriesDiv.querySelectorAll("button");
+let categorizedData = [];
+
+// Function to update category buttons
+const handleCategoryButtons = (data) => {
+    categoriesArray.forEach((item) => {
+        let existingCategory = false;
+
+        categories.forEach((category) => {
+            // Check if the division button already exists
+            if (category.textContent.toLowerCase() === item.toLowerCase()) {
+                existingCategory = true;
+            }
+        });
+
+        if (!existingCategory) {
+            const newButton = document.createElement("button");
+            newButton.className = "btn btn-light rounded-pill me-3 mb-2";
+            newButton.textContent = item;
+            categoriesDiv.appendChild(newButton);
+
+            newButton.addEventListener('click', () => {
+
+                const selectedCategory = newButton.textContent;
+                if (!(selectedCategory == 'All')) {
+                    categorizedData = data.filter(job => job.jobPosition.division.includes(`${selectedCategory}`));
+                } else {
+
+                    categorizedData = [...data];
+                }
+                
+                jobsWrapper.innerHTML = ``;
+                categorizedData.forEach((job) => {
+                    displayJobCard(job);
+                });
+
+                sortData(categorizedData);
+
+            });
+
+        }
+    });
 }
 
 
