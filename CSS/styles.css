@@ -31,14 +31,19 @@ li {
   overflow-x: auto;
   width: -moz-min-content;
   width: min-content;
-  max-width: 260px;
   justify-content: space-between;
   padding-bottom: 30px;
+}
+
+.first-column .logo {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
 }
 
 .logo span {
   font-weight: bolder;
   font-size: 4rem;
+  padding-bottom: 0 !important;
 }
 
 .nav .nav-item {
