@@ -234,7 +234,7 @@
     height: 0;
     overflow-y: hidden;
     margin: 0;
-    
+
 }
 
 /* .job-card .job-qualifications {
@@ -264,11 +264,16 @@
     background-color: #ffffff;
 }
 
-.job-card:hover .basic-job-info .company-name, .job-card:hover .basic-job-info .job-catergory, .job-card:hover .basic-job-info .job-address, .job-card:hover .basic-job-info .job-timings p, .job-card:hover .advance-job-info {
+.job-card:hover .basic-job-info .company-name,
+.job-card:hover .basic-job-info .job-catergory,
+.job-card:hover .basic-job-info .job-address,
+.job-card:hover .basic-job-info .job-timings p,
+.job-card:hover .advance-job-info {
     color: #fff;
 }
 
-.job-card:hover .basic-job-info .job-address i, .job-card:hover .other-job-info p .salary-amnt {
+.job-card:hover .basic-job-info .job-address i,
+.job-card:hover .other-job-info p .salary-amnt {
 
     color: $warning-color;
 }
@@ -399,7 +404,7 @@
     list-style: disc;
 }
 
-.third-column > div .read-more-btn {
+.third-column>div .read-more-btn {
 
     margin-top: 1px;
     color: $primary-dark-color;
@@ -449,18 +454,19 @@
     margin-bottom: 5px;
 }
 
-.open-third-column .about-company-lg p, .open-third-column .job-qualification-lg ul {
+.open-third-column .about-company-lg p,
+.open-third-column .job-qualification-lg ul {
 
     max-height: 100%;
 }
 
-.open-third-column .job-qualification-lg ul li{
+.open-third-column .job-qualification-lg ul li {
 
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.open-third-column > div .read-more-btn {
+.open-third-column>div .read-more-btn {
 
     display: none;
 }
@@ -475,6 +481,7 @@
         width: fit-content;
         padding: 0;
         padding-left: 10px;
+        padding-right: 5px;
         padding-top: 30px;
         flex: 1;
     }
@@ -483,6 +490,7 @@
 
         margin-left: 0;
         padding-left: 0;
+        padding-right: 0;
     }
 
     .mid-column .search-bar-form button {
@@ -494,12 +502,12 @@
 
         width: 100%;
         padding-left: 0;
+        padding-right: 0;
     }
 
+    .mid-column .sort-area {
 
-    .jobs .job-card {
-
-        margin-right: 10px;
+        margin-right: 5px;
     }
 
     .basic-job-info .job-catergory {
@@ -515,7 +523,24 @@
 
     .basic-job-info .job-timings {
 
-        display: none;
+        width: fit-content;
+        
+
+        .job-time,
+        .job-applicants {
+
+            display: none;
+        }
+    }
+
+    .job-timings .posted-time,
+    .job-timings .job-time,
+    .job-timings .job-applicants {
+
+        border-left: none;
+        padding-left: 0;
+        margin: 0;
+        
     }
 
     .other-job-info h5,
@@ -539,25 +564,26 @@
 
         margin-bottom: 10px;
     }
-    
+
     .third-column .company-name-lg h3 {
-    
+
         margin-bottom: 5px;
     }
 
-    .third-column .about-company-lg p, .third-column .job-qualification-lg ul {
+    .third-column .about-company-lg p,
+    .third-column .job-qualification-lg ul {
 
         max-height: 100%;
     }
 
-    .third-column .job-qualification-lg ul li{
+    .third-column .job-qualification-lg ul li {
 
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
-    .third-column > div .read-more-btn {
-    
+
+    .third-column>div .read-more-btn {
+
         display: none;
     }
 
@@ -643,7 +669,7 @@
         width: 50px;
         height: 50px;
     }
-    
+
     .basic-job-info .company-name {
 
         font-size: 1rem;
@@ -684,9 +710,16 @@
 
     .basic-job-info .job-catergory {
 
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         text-align: center;
         margin-right: 0;
+    }
+
+    .basic-job-info .job-timings {
+
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 5px;
     }
 
     .other-job-info .job-salary {

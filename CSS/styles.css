@@ -370,11 +370,16 @@ li {
   background-color: #ffffff;
 }
 
-.job-card:hover .basic-job-info .company-name, .job-card:hover .basic-job-info .job-catergory, .job-card:hover .basic-job-info .job-address, .job-card:hover .basic-job-info .job-timings p, .job-card:hover .advance-job-info {
+.job-card:hover .basic-job-info .company-name,
+.job-card:hover .basic-job-info .job-catergory,
+.job-card:hover .basic-job-info .job-address,
+.job-card:hover .basic-job-info .job-timings p,
+.job-card:hover .advance-job-info {
   color: #fff;
 }
 
-.job-card:hover .basic-job-info .job-address i, .job-card:hover .other-job-info p .salary-amnt {
+.job-card:hover .basic-job-info .job-address i,
+.job-card:hover .other-job-info p .salary-amnt {
   color: #ffca2c;
 }
 
@@ -526,7 +531,8 @@ li {
   margin-bottom: 5px;
 }
 
-.open-third-column .about-company-lg p, .open-third-column .job-qualification-lg ul {
+.open-third-column .about-company-lg p,
+.open-third-column .job-qualification-lg ul {
   max-height: 100%;
 }
 
@@ -545,12 +551,14 @@ li {
     width: fit-content;
     padding: 0;
     padding-left: 10px;
+    padding-right: 5px;
     padding-top: 30px;
     flex: 1;
   }
   .search-bar-form {
     margin-left: 0;
     padding-left: 0;
+    padding-right: 0;
   }
   .mid-column .search-bar-form button {
     width: -moz-fit-content;
@@ -559,9 +567,10 @@ li {
   .mid-column .recommended-positions {
     width: 100%;
     padding-left: 0;
+    padding-right: 0;
   }
-  .jobs .job-card {
-    margin-right: 10px;
+  .mid-column .sort-area {
+    margin-right: 5px;
   }
   .basic-job-info .job-catergory {
     margin-right: 10px;
@@ -570,7 +579,19 @@ li {
     display: none;
   }
   .basic-job-info .job-timings {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .basic-job-info .job-timings .job-time,
+  .basic-job-info .job-timings .job-applicants {
     display: none;
+  }
+  .job-timings .posted-time,
+  .job-timings .job-time,
+  .job-timings .job-applicants {
+    border-left: none;
+    padding-left: 0;
+    margin: 0;
   }
   .other-job-info h5,
   .other-job-info .job-position {
@@ -589,7 +610,8 @@ li {
   .third-column .company-name-lg h3 {
     margin-bottom: 5px;
   }
-  .third-column .about-company-lg p, .third-column .job-qualification-lg ul {
+  .third-column .about-company-lg p,
+  .third-column .job-qualification-lg ul {
     max-height: 100%;
   }
   .third-column .job-qualification-lg ul li {
@@ -679,9 +701,14 @@ li {
     text-align: center;
   }
   .basic-job-info .job-catergory {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
     margin-right: 0;
+  }
+  .basic-job-info .job-timings {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
   }
   .other-job-info .job-salary {
     width: 100%;
