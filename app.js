@@ -154,7 +154,7 @@ const displayJobCard = (job) => {
         thirdColumn.classList.add('open-third-column-md');
     });
 
-    
+
 }
 
 let displayedJobCards = null;
@@ -251,18 +251,31 @@ const categoriesArray = [
     // Add new categories here if needed
 ];
 
+const uniqueCategoriesArray = categoriesArray.filter((value, index, self) => {
+    // Convert all items to lowercase for comparison
+    const lowerValue = value.toLowerCase();
+    // Check if the lowercase version of the item is the same as the lowercase version of the first occurrence in the array
+    return index === self.findIndex((item) => item.toLowerCase() === lowerValue);
+});
+
 const categoriesDiv = document.querySelector(".categories-wrapper .categories");
 const categories = categoriesDiv.querySelectorAll("button");
 let categorizedData = [];
 
+let newCategoryBtns = [];
 // Function to update category buttons
 const handleCategoryButtons = (data) => {
-    categoriesArray.forEach((item) => {
+    uniqueCategoriesArray.forEach((item) => {
+
+        // Convert item and existing categories to lowercase for case-insensitive comparison
+        const itemLower = item.toLowerCase();
         let existingCategory = false;
 
         categories.forEach((category) => {
-            // Check if the division button already exists
-            if (category.textContent.toLowerCase() === item.toLowerCase()) {
+            // Convert the text content of the existing category to lowercase for comparison
+            const categoryTextLower = category.textContent.toLowerCase();
+            // Check if the division button already exists (case-insensitive comparison)
+            if (categoryTextLower === itemLower) {
                 existingCategory = true;
             }
         });
@@ -273,28 +286,48 @@ const handleCategoryButtons = (data) => {
             newButton.textContent = item;
             categoriesDiv.appendChild(newButton);
 
-            newButton.addEventListener('click', () => {
-
-                const selectedCategory = newButton.textContent;
-                if (!(selectedCategory == 'All')) {
-                    categorizedData = data.filter(job => job.jobPosition.division.includes(`${selectedCategory}`));
-                } else {
-
-                    categorizedData = [...data];
-                }
-                
-                jobsWrapper.innerHTML = ``;
-                categorizedData.forEach((job) => {
-                    displayJobCard(job);
-                });
-
-                sortData(categorizedData);
-
-            });
+            newCategoryBtns.push(newButton);
 
         }
     });
+
+    let prevClickedBtn = '';
+
+    newCategoryBtns.forEach((btn) => {
+
+        if (btn.textContent == 'All') {
+            btn.classList.add('active');
+        }
+
+        btn.addEventListener('click', () => {
+
+            newCategoryBtns[0].classList.remove('active');
+
+            if (prevClickedBtn) {
+                prevClickedBtn.classList.remove('active');
+            } 
+            btn.classList.add('active');
+            
+            const selectedCategory = btn.textContent;
+            if (!(selectedCategory == 'All')) {
+                categorizedData = data.filter(job => job.jobPosition.division.includes(`${selectedCategory}`));
+            } else {
+
+                categorizedData = [...data];
+            }
+
+            jobsWrapper.innerHTML = ``;
+            categorizedData.forEach((job) => {
+                displayJobCard(job);
+            });
+
+            sortData(categorizedData);
+
+            prevClickedBtn = btn;
+        });
+    });
 }
+
 
 
 // Fetch data from the JSON file
