@@ -41,6 +41,15 @@ const openThirdColumn = () => {
 }
 
 
+thirdColCloseIcon.addEventListener('click', () => {
+
+    thirdColumn.classList.remove('open-third-column');
+    thirdColumn.classList.remove('open-third-column-md');
+});
+
+openThirdColumn();
+
+
 const sortDataAccendingOrder = (anyArray) => {
 
     anyArray.sort((job1, job2) => {
@@ -154,10 +163,7 @@ const displayJobCard = (job) => {
         thirdColumn.classList.add('open-third-column-md');
     });
 
-
 }
-
-let displayedJobCards = null;
 
 const handleJobCards = (data) => {
 
@@ -172,13 +178,32 @@ const handleJobCards = (data) => {
 
 };
 
-thirdColCloseIcon.addEventListener('click', () => {
 
-    thirdColumn.classList.remove('open-third-column');
-    thirdColumn.classList.remove('open-third-column-md');
-});
 
-openThirdColumn();
+// Functionality to search for a job
+
+const jobSearchForm = document.querySelector(".mid-column .search-bar-form form");
+const jobSearchInput = jobSearchForm.querySelector("input");
+let searchedJobs = [];
+
+const searchJob = (data) => {
+
+    jobSearchForm.addEventListener('submit', (me) => {
+
+        me.preventDefault();
+        const jobSearchInputValue = jobSearchInput.value;
+
+        searchedJobs = data.filter(job => job.jobPosition.title.toLowerCase().includes(jobSearchInputValue.toLowerCase()));
+
+        jobsWrapper.innerHTML = ``;
+        searchedJobs.forEach((job) => {
+            displayJobCard(job);
+        });
+        
+        jobSearchInput.value = '';
+    });
+}
+
 
 const sortSelect = document.querySelector(".mid-column .sort-area #job-sortings");
 let selectedOption = '';
@@ -341,8 +366,9 @@ fetch('./jobs.json')
     })
     .then((data) => {
         handleJobCards(data);
-        sortData(data);
         handleCategoryButtons(data);
+        sortData(data);
+        searchJob(data);
     })
     .catch((error) => {
         console.error('Error loading JSON data:', error);

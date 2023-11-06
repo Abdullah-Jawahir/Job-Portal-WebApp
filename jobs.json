@@ -115,8 +115,32 @@
         ],
         "address": "456 X Street, San Francisco, CA",
         "postedTime": "6 days ago",
-        "workingPlace": "Hybrid",
+        "workingPlace": "Remote",
         "applicants": 75
+    },
+    {
+        "companyName": "YouTube",
+        "companyLogoSrc": "./Assets/youtube.png",
+        "jobPosition": {
+            "title": "Frontend Developer",
+            "division": "Web Development",
+            "salary": "$85,000"
+        },
+        "aboutCompany": "YouTube is the world's largest video-sharing platform, offering a vast array of content created by individuals and organizations. It has become an essential part of the online ecosystem, enabling creators to share their knowledge, art, and entertainment with a global audience. YouTube is driven by cutting-edge software engineering and data-driven decisions, making it a dynamic place for software engineers to work on innovative solutions that impact millions of users worldwide.",
+        "qualifications": [
+            "Bachelor's degree in Computer Science or related field",
+            "Proven experience in software development",
+            "Strong problem-solving and debugging skills",
+            "Familiarity with software design principles",
+            "Proficiency in multiple programming languages, including Java, C++, or JavaScript",
+            "Experience with video streaming technologies and codecs",
+            "Knowledge of DevOps practices and continuous integration/continuous deployment (CI/CD) pipelines",
+            "Strong understanding of video content management and distribution"
+        ],
+        "address": "789 YouTube Street, San Bruno, CA",
+        "postedTime": "4 days ago",
+        "workingPlace": "Remote",
+        "applicants": 70
     },
     {
         "companyName": "Facebook",
